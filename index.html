@@ -73,12 +73,12 @@
                   <span class="link-text">Portfolio</span>
                 </a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="#blog" class="nav-anim">
                   <span class="menu-icon lnr lnr-book"></span>
                   <span class="link-text">Blog</span>
                 </a>
-              </li>
+              </li> -->
               <li>
                 <a href="#contact" class="nav-anim">
                   <span class="menu-icon lnr lnr-envelope"></span>
@@ -129,11 +129,15 @@
                           <h2>Manoj Madduri</h2>
                           <div class="owl-carousel text-rotation">                                    
                             <div class="item">
-                              <div class="sp-subtitle">Full Stack Developer</div>
+                              <div class="sp-subtitle">Full-Stack Developer</div>
                             </div>
                             
                             <div class="item">
-                              <div class="sp-subtitle">Frontend-developer</div>
+                              <div class="sp-subtitle">Front-end Developer</div>
+                            </div>
+
+                            <div class="item">
+                              <div class="sp-subtitle">Back-End Developer</div>
                             </div>
                           </div>
                         </div>
@@ -1089,7 +1093,7 @@
                         <h3>Hire <span>Me</span></h3>
                       </div>
 
-                      <form id="contact_form" class="contact-form" action="contact_form/contact_form.php" method="post">
+                      <form id="contact_form" class="contact-form" action="https://formsubmit.co/manojmadduri@gmail.com" method="POST">
 
                         <div class="messages"></div>
 
@@ -1127,8 +1131,7 @@
                             </div>
                           </div>
 
-                          <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>
-      
+                          <!-- <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div> -->
                           <input type="submit" class="button btn-send" value="Send message">
                         </div>
                       </form>
@@ -1144,6 +1147,29 @@
 
       </div>
     </div>
+
+    <script>
+      document.getElementById('contact_form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Simple validation to ensure all required fields are filled
+        var form = this;
+        var valid = true;
+    
+        form.querySelectorAll('[required]').forEach(function(input) {
+          if (!input.value.trim()) {
+            valid = false;
+            input.nextElementSibling.textContent = input.getAttribute('data-error');
+          } else {
+            input.nextElementSibling.textContent = '';
+          }
+        });
+    
+        if (valid) {
+          form.submit(); // Submit the form if all validations are passed
+        }
+      });
+    </script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/modernizr.custom.js"></script>

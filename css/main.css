@@ -143,6 +143,7 @@ input[type="button"],
 input[type="submit"],
 .wp-block-button .wp-block-button__link {
   display: inline-block;
+  cursor: pointer;
   position: relative;
   padding: .8em 2.1em;
   margin-bottom: .75em;
